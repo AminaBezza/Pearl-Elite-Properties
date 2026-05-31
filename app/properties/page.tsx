@@ -12,6 +12,7 @@ const PropertiesPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const searchParams = useSearchParams()
   const statusFilter = searchParams.get('status') === 'available' ? 'available' : undefined
+  const propertyType = searchParams.get('type') as 'rent' | 'sale' | undefined
 
   return (
     <div className="pt-24 min-h-screen bg-white">
@@ -26,6 +27,11 @@ const PropertiesPage = () => {
       </div>
 
       <div className="container-custom py-12">
+        {/* Filter Bar */}
+        <div className="mb-8">
+          <SortBar />
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Sidebar */}
           <aside className="lg:w-1/4">
@@ -34,7 +40,7 @@ const PropertiesPage = () => {
 
           {/* Main Content */}
           <main className="lg:w-3/4 space-y-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 border-b border-gray-100 pb-6">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center space-x-4">
                 <button 
                   onClick={() => setViewMode('grid')}
@@ -52,10 +58,9 @@ const PropertiesPage = () => {
                   {statusFilter === 'available' ? 'Showing available properties' : 'Showing all demo properties'}
                 </span>
               </div>
-              <SortBar />
             </div>
 
-            <PropertyGrid viewMode={viewMode} statusFilter={statusFilter} />
+            <PropertyGrid viewMode={viewMode} statusFilter={statusFilter} propertyType={propertyType} />
 
             {/* Pagination */}
             <div className="flex justify-center space-x-2 pt-12">

@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Jost } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/layout/Navbar'
-import Footer from '@/components/layout/Footer'
-import ContactWidget from '@/components/layout/ContactWidget'
 import { Toaster } from 'react-hot-toast'
 import { LanguageProvider } from '@/context/LanguageContext'
+import LayoutWrapper from '@/components/layout/LayoutWrapper'
 
 const playfair = Playfair_Display({ 
   subsets: ['latin'],
@@ -33,10 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${playfair.variable} ${jost.variable} font-body bg-white text-luxury-black antialiased`}>
         <LanguageProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <ContactWidget />
+          <LayoutWrapper>{children}</LayoutWrapper>
           <Toaster position="bottom-right" />
         </LanguageProvider>
       </body>

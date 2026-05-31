@@ -22,7 +22,7 @@ const HeroSection = () => {
           </h2>
           <h1 className="normal-case tracking-normal text-5xl md:text-7xl lg:text-[86px] xl:text-[92px] font-heading leading-[1.05] mx-auto max-w-5xl drop-shadow-2xl">
             Discover your Dream <br /> 
-            Luxury Home in Qatar
+            Luxury Home
           </h1>
         </div>
 

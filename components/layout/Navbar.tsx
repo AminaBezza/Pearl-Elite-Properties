@@ -58,28 +58,18 @@ const Navbar = () => {
 
         {/* Buttons */}
         <div className="hidden lg:flex items-center space-x-5 rtl:space-x-reverse text-white">
-          <button className="hover:text-gold transition-colors">
-            <Search size={18} />
-          </button>
-          
-          {/* Sign in Button */}
-          <Link href="/admin/login" className="flex items-center space-x-2 text-white hover:text-gold transition-colors">
-            <User size={16} />
-            <span className="text-xs font-medium">Sign in</span>
+          {/* Sign in Button - Icon Only */}
+          <Link href="/admin/login" className="text-white hover:text-gold transition-colors">
+            <User size={18} />
           </Link>
 
-          {/* Language Switcher */}
+          {/* Language Switcher - Icon Only */}
           <button 
             onClick={() => setLocale(locale === 'en' ? 'ar' : 'en')}
-            className="flex items-center space-x-2 text-white hover:text-gold transition-colors"
+            className="text-white hover:text-gold transition-colors"
           >
-            <Globe size={16} />
-            <span className="text-xs font-semibold">{locale === 'en' ? 'EN' : 'AR'}</span>
+            <Globe size={18} />
           </button>
-
-          <Link href="/contact" className="btn-gold !py-3 !px-6 !text-[9px] rounded-md shadow-lg shadow-black/10">
-            {t('nav.listProperty')}
-          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -126,14 +116,6 @@ const Navbar = () => {
            >
              <User size={20} />
              <span>Sign in</span>
-           </Link>
-
-           <Link
-             href="/contact"
-             className="w-full btn-gold !py-4"
-             onClick={() => setIsMobileMenuOpen(false)}
-           >
-             {t('nav.listProperty')}
            </Link>
         </div>
       </div>

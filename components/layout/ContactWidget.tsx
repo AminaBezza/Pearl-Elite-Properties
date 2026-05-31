@@ -70,8 +70,8 @@ const ContactWidget = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-500 overflow-hidden border border-white/40',
-          isOpen ? 'bg-luxury-black rotate-90' : 'bg-gold/80 hover:bg-gold backdrop-blur-md'
+          'w-16 h-16 rounded-full flex items-center justify-center shadow-xl transition-all duration-500 overflow-hidden border-2 border-gold/40 hover:border-gold',
+          isOpen ? 'bg-luxury-black' : 'bg-gradient-to-br from-gold to-yellow-600 hover:from-gold hover:to-yellow-700 hover:shadow-2xl'
         )}
       >
         {isOpen ? (

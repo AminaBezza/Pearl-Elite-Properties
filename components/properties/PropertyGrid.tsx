@@ -6,13 +6,23 @@ import { demoProperties } from '@/lib/properties'
 interface PropertyGridProps {
   viewMode: 'grid' | 'list'
   statusFilter?: 'available'
+  propertyType?: 'rent' | 'sale'
 }
 
-const PropertyGrid: React.FC<PropertyGridProps> = ({ viewMode, statusFilter }) => {
-  const properties =
-    statusFilter === 'available'
-      ? demoProperties.filter((property) => property.status === 'available')
-      : demoProperties
+const PropertyGrid: React.FC<PropertyGridProps> = ({ viewMode, statusFilter, propertyType }) => {
+  let properties = demoProperties
+
+  // Filter by status if provided
+  if (statusFilter === 'available') {
+    properties = properties.filter((property) => property.status === 'available')
+  }
+
+  // Filter by property type (Rent or Sale) if provided
+  if (propertyType === 'rent') {
+    properties = properties.filter((property) => property.type === 'Rent')
+  } else if (propertyType === 'sale') {
+    properties = properties.filter((property) => property.type === 'Sale')
+  }
 
   return (
     <div className={cn(

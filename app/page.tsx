@@ -3,8 +3,7 @@ import FeaturedProperties from '@/components/home/FeaturedProperties'
 import LocationsSection from '@/components/home/LocationsSection'
 import WhyUsSection from '@/components/home/WhyUsSection'
 import ServicesSection from '@/components/home/ServicesSection'
-import TestimonialsSection from '@/components/home/TestimonialsSection'
-import CTABand from '@/components/home/CTABand'
+import ContactSection from '@/components/home/ContactSection'
 
 export default function Home() {
   return (
@@ -18,15 +17,14 @@ export default function Home() {
       <div id="locations" className="scroll-mt-24">
         <LocationsSection />
       </div>
-      <div id="about" className="scroll-mt-24">
-        <WhyUsSection />
-      </div>
       <div id="services" className="scroll-mt-24">
         <ServicesSection />
       </div>
-      <TestimonialsSection />
+      <div id="about" className="scroll-mt-24">
+        <WhyUsSection />
+      </div>
       <div id="contact" className="scroll-mt-24">
-        <CTABand />
+        <ContactSection />
       </div>
     </div>
   )

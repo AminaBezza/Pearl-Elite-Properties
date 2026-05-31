@@ -38,7 +38,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Left Side - Hero Section */}
-      <div className="hidden lg:flex lg:w-1/2 relative bg-luxury-black p-12 flex-col justify-between overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 relative bg-luxury-black p-12 flex-col items-center justify-center overflow-hidden text-center">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -50,47 +50,49 @@ const LoginPage = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-luxury-black via-luxury-black/50 to-transparent"></div>
         </div>
 
-        <div className="relative z-10">
-          <Link href="/" className="text-white font-heading text-2xl tracking-tighter">
-            PEARL <span className="text-gold">ELITE</span>
-          </Link>
-        </div>
-
-        <div className="relative z-10 space-y-12">
-          <h1 className="text-5xl font-heading text-white leading-tight max-w-md">
-            Your gateway to Qatar&apos;s Finest <br /> Properties
-          </h1>
-
-          <div className="space-y-6">
-            {[
-              "100% Verified Listings",
-              "Priority Access & Community Insights",
-              "Personalized Property Experience"
-            ].map((feature, i) => (
-              <div key={i} className="flex items-center space-x-4 text-white/90">
-                <div className="bg-white/10 p-1 rounded-full">
-                  <CheckCircle2 className="text-white" size={18} />
-                </div>
-                <span className="text-lg font-light tracking-wide">{feature}</span>
-              </div>
-            ))}
+        <div className="relative z-10 flex flex-col items-center justify-center space-y-12 max-w-md">
+          <div>
+            <Link href="/" className="text-white font-heading text-2xl tracking-tighter">
+              PEARL <span className="text-gold">ELITE</span>
+            </Link>
           </div>
-        </div>
 
-        <div className="relative z-10 flex items-center space-x-8 border-t border-white/10 pt-8">
-           <div className="flex border-r border-white/20 pr-8">
-              <div className="text-white text-[10px] leading-tight flex flex-col justify-center">
-                <span className="font-bold text-sm tracking-tighter">ARABIAN</span>
-                <span className="font-bold text-sm tracking-tighter">PROPERTY</span>
-                <span className="font-light tracking-[0.2em]">AWARDS</span>
-              </div>
-           </div>
-           <div className="text-white/60 text-[10px] space-y-1">
-             <div className="flex text-gold">★★★★★</div>
-             <p className="uppercase tracking-widest font-bold">Best Real Estate</p>
-             <p className="uppercase tracking-widest">Agency Website</p>
-             <p className="uppercase tracking-widest text-[#888]">Qatar 2024-2025</p>
-           </div>
+          <div className="space-y-12">
+            <h1 className="text-5xl font-heading text-white leading-tight">
+              Your gateway to Qatar&apos;s Finest <br /> Properties
+            </h1>
+
+            <div className="space-y-6">
+              {[
+                "100% Verified Listings",
+                "Priority Access & Community Insights",
+                "Personalized Property Experience"
+              ].map((feature, i) => (
+                <div key={i} className="flex items-center justify-center space-x-4 text-white/90">
+                  <div className="bg-white/10 p-1 rounded-full shrink-0">
+                    <CheckCircle2 className="text-white" size={18} />
+                  </div>
+                  <span className="text-lg font-light tracking-wide">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center space-y-8 border-t border-white/10 pt-8 w-full">
+             <div className="flex flex-col items-center space-x-0 space-y-4">
+                <div className="text-white text-[10px] leading-tight flex flex-col items-center justify-center">
+                  <span className="font-bold text-sm tracking-tighter">ARABIAN</span>
+                  <span className="font-bold text-sm tracking-tighter">PROPERTY</span>
+                  <span className="font-light tracking-[0.2em]">AWARDS</span>
+                </div>
+             </div>
+             <div className="text-white/60 text-[10px] space-y-1 text-center">
+               <div className="flex justify-center text-gold">★★★★★</div>
+               <p className="uppercase tracking-widest font-bold">Best Real Estate</p>
+               <p className="uppercase tracking-widest">Agency Website</p>
+               <p className="uppercase tracking-widest text-[#888]">Qatar 2024-2025</p>
+             </div>
+          </div>
         </div>
       </div>
 

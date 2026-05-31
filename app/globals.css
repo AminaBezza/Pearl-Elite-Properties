@@ -13,6 +13,42 @@
     scroll-behavior: smooth;
   }
 
+  html[lang="ar"] {
+    @apply text-base;
+  }
+
+  html[lang="ar"] body {
+    @apply text-lg;
+  }
+
+  html[lang="ar"] h1 {
+    @apply text-5xl lg:text-7xl;
+  }
+
+  html[lang="ar"] h2 {
+    @apply text-3xl lg:text-5xl;
+  }
+
+  html[lang="ar"] h3 {
+    @apply text-2xl lg:text-4xl;
+  }
+
+  html[lang="ar"] h4 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  html[lang="ar"] p {
+    @apply text-base leading-relaxed;
+  }
+
+  html[lang="ar"] .text-xs {
+    @apply text-sm;
+  }
+
+  html[lang="ar"] .text-sm {
+    @apply text-base;
+  }
+
   body {
     @apply text-luxury-black bg-white;
   }
