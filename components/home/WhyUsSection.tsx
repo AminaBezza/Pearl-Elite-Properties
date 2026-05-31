@@ -1,30 +1,33 @@
+"use client"
+
 import React from 'react'
 import Link from 'next/link'
 import { ShieldCheck, Award, Users, Search } from 'lucide-react'
-
-const features = [
-  { icon: <ShieldCheck size={32} />, title: 'Premium Security', desc: 'Verified listings and secure transactions always.' },
-  { icon: <Award size={32} />, title: 'Award Winning', desc: 'Recognized as Qatar best luxury agency 3 years running.' },
-  { icon: <Users size={32} />, title: 'Expert Agents', desc: 'Multi-lingual team with deep local market knowledge.' },
-  { icon: <Search size={32} />, title: 'Exclusive Access', desc: 'Off-market opportunities you wont find anywhere else.' },
-]
+import { useLanguage } from '@/context/LanguageContext'
 
 const WhyUsSection = () => {
+  const { t } = useLanguage()
+
+  const features = [
+    { icon: <ShieldCheck size={32} />, title: t('whyus.feature1'), desc: t('whyus.feature1desc') },
+    { icon: <Award size={32} />, title: t('whyus.feature2'), desc: t('whyus.feature2desc') },
+    { icon: <Users size={32} />, title: t('whyus.feature3'), desc: t('whyus.feature3desc') },
+    { icon: <Search size={32} />, title: t('whyus.feature4'), desc: t('whyus.feature4desc') },
+  ]
+
   return (
     <section className="overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Left: Text Content - Beige/Cream */}
         <div className="lg:w-1/2 section-padding px-4 sm:px-8 lg:px-24 flex flex-col justify-center space-y-8 bg-stone-100">
           <div className="space-y-4">
-            <h3 className="text-gold text-sm tracking-[0.2em] uppercase">Why Choose Us</h3>
-            <h2 className="text-3xl lg:text-5xl leading-tight text-luxury-black font-heading">Elevating Real Estate <br /> Excellence in Qatar</h2>
+            <h3 className="text-gold text-sm tracking-[0.2em] uppercase">{t('whyus.title')}</h3>
+            <h2 className="text-3xl lg:text-5xl leading-tight text-luxury-black font-heading">{t('whyus.heading')}</h2>
           </div>
-          <p className="text-gray-600 leading-relaxed">
-            Pearl Elite Properties is more than a real estate agency. We are your dedicated partners in navigating the sophisticated Qatari property landscape, offering personalized service that exceeds expectations at every turn.
-          </p>
+          <p className="text-gray-600 leading-relaxed">{t('whyus.desc')}</p>
           <div className="pt-4">
             <Link href="/about" className="btn-outline inline-block">
-              Learn More About Us
+              {t('whyus.learnmore')}
             </Link>
           </div>
         </div>

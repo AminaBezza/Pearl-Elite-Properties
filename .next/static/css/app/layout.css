@@ -1295,6 +1295,9 @@ html[lang="ar"] .nav-link {
 .w-4 {
   width: 1rem;
 }
+.w-44 {
+  width: 11rem;
+}
 .w-6 {
   width: 1.5rem;
 }
@@ -1484,6 +1487,11 @@ html[lang="ar"] .nav-link {
 .gap-8 {
   gap: 2rem;
 }
+.space-x-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0px * var(--tw-space-x-reverse));
+  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.25rem * var(--tw-space-x-reverse));
@@ -1563,11 +1571,6 @@ html[lang="ar"] .nav-link {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-.space-x-0 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0px * var(--tw-space-x-reverse));
-  margin-left: calc(0px * calc(1 - var(--tw-space-x-reverse)));
 }
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
@@ -1763,6 +1766,9 @@ html[lang="ar"] .nav-link {
 .bg-gold\/20 {
   background-color: rgb(201 162 39 / 0.2);
 }
+.bg-gold\/5 {
+  background-color: rgb(201 162 39 / 0.05);
+}
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
@@ -1849,14 +1855,14 @@ html[lang="ar"] .nav-link {
 .bg-white\/40 {
   background-color: rgb(255 255 255 / 0.4);
 }
+.bg-white\/5 {
+  background-color: rgb(255 255 255 / 0.05);
+}
 .bg-white\/90 {
   background-color: rgb(255 255 255 / 0.9);
 }
 .bg-white\/95 {
   background-color: rgb(255 255 255 / 0.95);
-}
-.bg-gold\/5 {
-  background-color: rgb(201 162 39 / 0.05);
 }
 .bg-\[url\(\'\/image\/lux-home\.webp\'\)\] {
   background-image: url('/image/lux-home.webp');
@@ -2393,6 +2399,9 @@ html[lang="ar"] .nav-link {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
+.text-white\/50 {
+  color: rgb(255 255 255 / 0.5);
+}
 .text-white\/60 {
   color: rgb(255 255 255 / 0.6);
 }
@@ -2599,6 +2608,10 @@ html[lang="ar"] .nav-link {
   border-color: rgb(201 162 39 / var(--tw-border-opacity, 1));
 }
 
+.hover\:border-gold\/70:hover {
+  border-color: rgb(201 162 39 / 0.7);
+}
+
 .hover\:border-slate-950:hover {
   --tw-border-opacity: 1;
   border-color: rgb(2 6 23 / var(--tw-border-opacity, 1));
@@ -2665,6 +2678,10 @@ html[lang="ar"] .nav-link {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-white\/10:hover {
+  background-color: rgb(255 255 255 / 0.1);
 }
 
 .hover\:bg-white\/20:hover {
@@ -2751,13 +2768,13 @@ html[lang="ar"] .nav-link {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:shadow-gold\/50:hover {
-  --tw-shadow-color: rgb(201 162 39 / 0.5);
+.hover\:shadow-gold\/20:hover {
+  --tw-shadow-color: rgb(201 162 39 / 0.2);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
-.hover\:shadow-gold\/20:hover {
-  --tw-shadow-color: rgb(201 162 39 / 0.2);
+.hover\:shadow-gold\/50:hover {
+  --tw-shadow-color: rgb(201 162 39 / 0.5);
   --tw-shadow: var(--tw-shadow-colored);
 }
 

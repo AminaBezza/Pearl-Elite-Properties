@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
 const ContactPage = () => {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,8 +30,8 @@ const ContactPage = () => {
       {/* Hero */}
       <div className="bg-luxury-black text-white py-20 lg:py-32">
         <div className="container-custom text-center space-y-4">
-          <h3 className="text-gold text-sm tracking-[0.3em] uppercase">Connect With Us</h3>
-          <h1 className="text-4xl lg:text-7xl font-heading">Contact Pearl Elite Properties</h1>
+          <h3 className="text-gold text-sm tracking-[0.3em] uppercase">{t('contact.title')}</h3>
+          <h1 className="text-4xl lg:text-7xl font-heading">{t('contact.subtitle')}</h1>
         </div>
       </div>
 
@@ -42,7 +44,7 @@ const ContactPage = () => {
               <div className="flex justify-center mb-4">
                 <MapPin className="text-gold" size={40} />
               </div>
-              <h3 className="text-xl font-heading text-luxury-black">Address</h3>
+              <h3 className="text-xl font-heading text-luxury-black">{t('contact.visitus')}</h3>
               <p className="text-sm text-gray-600 font-medium">Elite Tower, Floor 22</p>
               <p className="text-sm text-gray-600 font-medium">West Bay, Doha, Qatar</p>
             </div>
@@ -52,7 +54,7 @@ const ContactPage = () => {
               <div className="flex justify-center mb-4">
                 <Phone className="text-gold" size={40} />
               </div>
-              <h3 className="text-xl font-heading text-luxury-black">Contact Us</h3>
+              <h3 className="text-xl font-heading text-luxury-black">{t('contact.callus')}</h3>
               <a href="https://wa.me/97444440000" className="text-sm text-blue-500 hover:underline font-medium">
                 +974 4444 0000
               </a>
@@ -64,7 +66,7 @@ const ContactPage = () => {
               <div className="flex justify-center mb-4">
                 <Mail className="text-gold" size={40} />
               </div>
-              <h3 className="text-xl font-heading text-luxury-black">Email Address</h3>
+              <h3 className="text-xl font-heading text-luxury-black">{t('contact.emailus')}</h3>
               <a href="mailto:info@pearlelite.qa" className="text-sm text-blue-500 hover:underline font-medium">
                 info@pearlelite.qa
               </a>
@@ -94,16 +96,14 @@ const ContactPage = () => {
             {/* Form */}
             <div className="space-y-8">
               <div className="space-y-2">
-                <h2 className="text-3xl font-heading text-luxury-black">Send us a Message</h2>
-                <p className="text-gray-600">
-                  Fill out the form below and our team will get back to you within 24 hours.
-                </p>
+                <h2 className="text-3xl font-heading text-luxury-black">{t('contact.sendmessage')}</h2>
+                <p className="text-gray-600">{t('contact.supportdesc')}</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Full Name</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{t('contact.form.name')}</label>
                   <input
                     type="text"
                     name="name"
@@ -111,13 +111,13 @@ const ContactPage = () => {
                     onChange={handleChange}
                     required
                     className="w-full border border-gray-300 p-4 text-sm focus:border-gold outline-none bg-white"
-                    placeholder="Your Full Name"
+                    placeholder={t('contact.form.name')}
                   />
                 </div>
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Email Address</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{t('contact.form.email')}</label>
                   <input
                     type="email"
                     name="email"
@@ -131,7 +131,7 @@ const ContactPage = () => {
 
                 {/* Phone */}
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Phone Number</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{t('contact.form.phone')}</label>
                   <input
                     type="tel"
                     name="phone"
@@ -145,7 +145,7 @@ const ContactPage = () => {
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Message</label>
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{t('contact.form.message')}</label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -153,7 +153,7 @@ const ContactPage = () => {
                     required
                     rows={6}
                     className="w-full border border-gray-300 p-4 text-sm focus:border-gold outline-none bg-white"
-                    placeholder="Your message here..."
+                    placeholder={t('contact.form.message')}
                   ></textarea>
                 </div>
 
@@ -161,7 +161,7 @@ const ContactPage = () => {
                 <div className="flex items-center border border-gray-300 bg-white p-3 rounded">
                   <input type="checkbox" className="w-6 h-6 cursor-pointer" />
                   <div className="flex-1 flex items-center justify-between ml-3">
-                    <span className="text-xs text-gray-600">Je ne suis pas un robot</span>
+                    <span className="text-xs text-gray-600">{t('contact.form.notrobot')}</span>
                     <div className="text-right">
                       <p className="text-[10px] text-gray-400">reCAPTCHA</p>
                       <p className="text-[8px] text-gray-400">Privacy - Terms</p>
@@ -174,7 +174,7 @@ const ContactPage = () => {
                   type="submit"
                   className="btn-gold w-full py-4 text-center font-bold uppercase tracking-wider"
                 >
-                  Send Message
+                  {t('contact.form.send')}
                 </button>
               </form>
             </div>
@@ -186,22 +186,22 @@ const ContactPage = () => {
       <section className="section-padding bg-white">
         <div className="container-custom text-center space-y-8">
           <div className="space-y-2">
-            <h2 className="text-3xl font-heading">Office Hours</h2>
-            <p className="text-gray-600">We are here to help you Monday through Saturday</p>
+            <h2 className="text-3xl font-heading">{t('contact.hours')}</h2>
+            <p className="text-gray-600">{t('contact.supportdesc')}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="space-y-2">
-              <p className="font-heading text-lg text-luxury-black">Sunday - Thursday</p>
+              <p className="font-heading text-lg text-luxury-black">{t('contact.hours1')}</p>
               <p className="text-gray-600">9:00 AM - 6:00 PM</p>
             </div>
             <div className="space-y-2">
-              <p className="font-heading text-lg text-luxury-black">Saturday</p>
+              <p className="font-heading text-lg text-luxury-black">{t('contact.hours2')}</p>
               <p className="text-gray-600">10:00 AM - 4:00 PM</p>
             </div>
             <div className="space-y-2">
-              <p className="font-heading text-lg text-gold">Friday</p>
-              <p className="text-gray-600">Closed</p>
+              <p className="font-heading text-lg text-gold">{t('contact.hours3')}</p>
+              <p className="text-gray-600">{t('contact.hours3time')}</p>
             </div>
           </div>
         </div>

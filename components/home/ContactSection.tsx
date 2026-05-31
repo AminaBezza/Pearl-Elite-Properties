@@ -1,8 +1,13 @@
+"use client"
+
 import React from 'react'
 import Link from 'next/link'
 import { Phone, Mail, MapPin } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
 const ContactSection = () => {
+  const { t } = useLanguage()
+
   return (
     <section className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
@@ -10,13 +15,11 @@ const ContactSection = () => {
           {/* Left: Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h3 className="text-gold text-sm tracking-[0.2em] uppercase">Get in Touch</h3>
-              <h2 className="text-4xl lg:text-5xl font-heading text-luxury-black">Ready to Find Your <br /> Dream Property?</h2>
+              <h3 className="text-gold text-sm tracking-[0.2em] uppercase">{t('contact.title')}</h3>
+              <h2 className="text-4xl lg:text-5xl font-heading text-luxury-black">{t('contact.subtitle')}</h2>
             </div>
             
-            <p className="text-gray-600 leading-relaxed max-w-lg">
-              Our expert team is available 24/7 to assist you with any inquiries about buying, renting, or listing properties in Qatar's most prestigious locations.
-            </p>
+            <p className="text-gray-600 leading-relaxed max-w-lg">{t('contact.desc')}</p>
 
             <div className="space-y-4 pt-4">
               <div className="flex items-center space-x-4">
@@ -24,7 +27,7 @@ const ContactSection = () => {
                   <Phone size={20} className="text-gold" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider">Call Us</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">{t('contact.callus')}</p>
                   <p className="text-luxury-black font-medium">+974 4444 0000</p>
                 </div>
               </div>
@@ -34,7 +37,7 @@ const ContactSection = () => {
                   <Mail size={20} className="text-gold" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider">Email Us</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">{t('contact.emailus')}</p>
                   <p className="text-luxury-black font-medium">info@pearlelite.qa</p>
                 </div>
               </div>
@@ -44,7 +47,7 @@ const ContactSection = () => {
                   <MapPin size={20} className="text-gold" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider">Visit Us</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">{t('contact.visitus')}</p>
                   <p className="text-luxury-black font-medium">Elite Tower, Floor 22, West Bay</p>
                 </div>
               </div>
@@ -52,7 +55,7 @@ const ContactSection = () => {
 
             <div className="pt-4">
               <Link href="/contact" className="btn-gold inline-block px-8 py-4">
-                Send a Message
+                {t('contact.sendmessage')}
               </Link>
             </div>
           </div>

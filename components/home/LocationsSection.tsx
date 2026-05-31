@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useLanguage } from '@/context/LanguageContext'
 
 interface LocationData {
   name: string
@@ -56,13 +57,14 @@ interface LocationsSectionProps {
 
 const LocationsSection = ({ filter = 'all' }: LocationsSectionProps) => {
   const filteredLocations = locations
+  const { t } = useLanguage()
 
   return (
     <section className="section-padding bg-luxury-gray">
       <div className="container-custom">
         <div className="text-center space-y-4 mb-16">
-          <h3 className="text-gold text-sm tracking-[0.2em] uppercase">Premium Neighborhoods</h3>
-          <h2 className="text-3xl lg:text-5xl font-heading">Explore Locations</h2>
+          <h3 className="text-gold text-sm tracking-[0.2em] uppercase">{t('locations.title')}</h3>
+          <h2 className="text-3xl lg:text-5xl font-heading">{t('locations.subtitle')}</h2>
         </div>
 
         {filteredLocations.length > 0 ? (
@@ -83,7 +85,7 @@ const LocationsSection = ({ filter = 'all' }: LocationsSectionProps) => {
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-2xl font-heading mb-2">{loc.name}</h3>
                   <span className="text-[10px] uppercase tracking-widest text-gold font-bold">
-                    {loc.count} Properties
+                    {loc.count} {t('properties.title')}
                   </span>
                 </div>
               </Link>
@@ -91,7 +93,7 @@ const LocationsSection = ({ filter = 'all' }: LocationsSectionProps) => {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-luxury-black/60 text-lg">No properties found for this filter.</p>
+            <p className="text-luxury-black/60 text-lg">{t('locations.empty')}</p>
           </div>
         )}
       </div>

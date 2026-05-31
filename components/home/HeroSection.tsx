@@ -21,8 +21,8 @@ const HeroSection = () => {
             Pearl Elite Properties
           </h2>
           <h1 className="normal-case tracking-normal text-5xl md:text-7xl lg:text-[86px] xl:text-[92px] font-heading leading-[1.05] mx-auto max-w-5xl drop-shadow-2xl">
-            Discover your Dream <br /> 
-            Luxury Home
+            {t('hero.titleLine1')} <br />
+            {t('hero.titleLine2')}
           </h1>
         </div>
 
@@ -33,7 +33,7 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-3 opacity-75">
-        <span className="text-[10px] uppercase tracking-[0.3em] text-white font-semibold">Scroll</span>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-white font-semibold">{t('home.scroll')}</span>
         <div className="w-[1px] h-11 bg-gradient-to-b from-white to-transparent"></div>
       </div>
     </section>

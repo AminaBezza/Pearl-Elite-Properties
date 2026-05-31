@@ -1,6 +1,9 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image'
 import { Star } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
 interface Testimonial {
   quote: string
@@ -9,6 +12,8 @@ interface Testimonial {
 }
 
 const AboutPage = () => {
+  const { t } = useLanguage()
+
   const testimonials: Testimonial[] = [
     {
       quote: '"Pearl Elite Properties provided exceptional service. Their knowledge of the Lusail market saved me months of research."',
@@ -36,42 +41,34 @@ const AboutPage = () => {
             {/* Left: Text */}
             <div className="space-y-6">
               <div className="space-y-4">
-                <h3 className="text-gold text-sm tracking-[0.2em] uppercase">Our Story</h3>
-                <h2 className="text-4xl font-heading">Premium Real Estate Excellence</h2>
+                <h3 className="text-gold text-sm tracking-[0.2em] uppercase">{t('about.story')}</h3>
+                <h2 className="text-4xl font-heading">{t('about.title')}</h2>
               </div>
               
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  Pearl Elite Properties is more than just a real estate agency. We are your dedicated partners in navigating the sophisticated Qatari property landscape, offering personalized service that exceeds expectations at every turn.
-                </p>
-                
-                <p>
-                  With over a decade of experience in Qatar's luxury real estate market, our team has facilitated hundreds of successful transactions across The Pearl, Lusail, West Bay, and other premier locations. We combine deep local market knowledge with international expertise to serve both domestic and expatriate clients.
-                </p>
-                
-                <p>
-                  Our mission is simple: to provide verified listings, secure transactions, and exclusive access to off-market opportunities that reflect our clients' lifestyle and investment goals. Every property, every client, and every transaction receives our unwavering commitment to excellence.
-                </p>
+                <p>{t('about.desc')}</p>
+                <p>{t('about.desc2')}</p>
+                <p>{t('about.desc3')}</p>
               </div>
 
               <div className="pt-4 space-y-3">
-                <h4 className="font-heading text-lg">Our Core Values</h4>
+                <h4 className="font-heading text-lg">{t('about.values')}</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gold rounded-full"></div>
-                    <span className="text-gray-600">Integrity in every transaction</span>
+                    <span className="text-gray-600">{t('about.value1')}</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gold rounded-full"></div>
-                    <span className="text-gray-600">Unmatched market expertise</span>
+                    <span className="text-gray-600">{t('about.value2')}</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gold rounded-full"></div>
-                    <span className="text-gray-600">Personalized client service</span>
+                    <span className="text-gray-600">{t('about.value3')}</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-gold rounded-full"></div>
-                    <span className="text-gray-600">Exclusive access opportunities</span>
+                    <span className="text-gray-600">{t('about.value4')}</span>
                   </li>
                 </ul>
               </div>
@@ -95,8 +92,8 @@ const AboutPage = () => {
         <div className="container-custom">
           {/* Header */}
           <div className="text-center space-y-4 mb-16">
-            <h3 className="text-gold text-sm tracking-[0.2em] uppercase">Testimonials</h3>
-            <h2 className="text-4xl lg:text-5xl font-heading">What Our Clients Say</h2>
+            <h3 className="text-gold text-sm tracking-[0.2em] uppercase">{t('about.testimonials')}</h3>
+            <h2 className="text-4xl lg:text-5xl font-heading">{t('about.testimonialssubtitle')}</h2>
           </div>
 
           {/* Decorative Line */}
@@ -141,17 +138,15 @@ const AboutPage = () => {
       <section className="section-padding bg-gradient-to-br from-stone-100 to-stone-50">
         <div className="container-custom text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="text-4xl font-heading">Ready to Find Your Dream Property?</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Let our expert team guide you through Qatar's most exclusive real estate opportunities.
-            </p>
+            <h2 className="text-4xl font-heading">{t('about.ready')}</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">{t('about.readydesc')}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/properties" className="btn-gold">
-              Browse Properties
+              {t('about.browseprops')}
             </a>
             <a href="/#contact" className="btn-outline">
-              Contact Our Team
+              {t('about.contactus')}
             </a>
           </div>
         </div>

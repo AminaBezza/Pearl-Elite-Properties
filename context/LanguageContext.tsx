@@ -13,6 +13,7 @@ interface LanguageContextType {
 
 const translations: Record<Locale, Record<string, string>> = {
   en: {
+    'nav.home': 'Home',
     // Navigation
     'nav.properties': 'Properties',
     'nav.locations': 'Locations',
@@ -26,10 +27,15 @@ const translations: Record<Locale, Record<string, string>> = {
     'hero.title': 'Discover Your Dream Luxury Home',
     'hero.subtitle': 'World-class real estate services for the most discerning clients.',
     'hero.cta': "Let's talk",
+    'hero.titleLine1': 'Discover Your Dream',
+    'hero.titleLine2': 'Luxury Home',
+    'home.scroll': 'Scroll',
     
     // Featured Properties
+    'featured.selection': 'Our Selection',
     'properties.title': 'Featured Properties',
     'properties.subtitle': 'Handpicked luxury properties across Qatar\'s finest locations',
+    'featured.viewAll': 'View All',
     'properties.forSale': 'For Sale',
     'properties.forRent': 'For Rent',
     'properties.beds': 'Beds',
@@ -40,6 +46,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Locations
     'locations.title': 'Explore Premium Locations',
     'locations.subtitle': 'Discover Qatar\'s most exclusive neighborhoods',
+    'locations.empty': 'No properties found for this filter.',
     
     // Services
     'services.title': 'Our Services',
@@ -52,6 +59,7 @@ const translations: Record<Locale, Record<string, string>> = {
     
     // Why Us
     'whyus.title': 'Elevating Real Estate Excellence in Qatar',
+    'whyus.heading': 'Elevating Real Estate Excellence in Qatar',
     'whyus.desc': 'Pearl Elite Properties is more than a real estate agency. We are your dedicated partners in navigating the sophisticated Qatari property landscape, offering personalized service that exceeds expectations at every turn.',
     'whyus.learnmore': 'Learn More About Us',
     'whyus.feature1': 'Premium Security',
@@ -73,6 +81,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'contact.sendmessage': 'Send a Message',
     'contact.support': '24/7 Support',
     'contact.supportdesc': 'Our team is available around the clock to answer your questions.',
+    'contact.callus': 'Call Us',
+    'contact.emailus': 'Email Us',
+    'contact.visitus': 'Visit Us',
     'contact.form.name': 'Full Name',
     'contact.form.email': 'Email Address',
     'contact.form.phone': 'Phone Number',
@@ -106,8 +117,23 @@ const translations: Record<Locale, Record<string, string>> = {
     'about.readydesc': 'Let our expert team guide you through Qatar\'s most exclusive real estate opportunities.',
     'about.browseprops': 'Browse Properties',
     'about.contactus': 'Contact Us',
+
+    // Admin
+    'admin.overview': 'Overview',
+    'admin.dashboard': 'Dashboard',
+    'admin.totalProperties': 'Total Properties',
+    'admin.activeInquiries': 'Active Inquiries',
+    'admin.websiteViews': 'Website Views',
+    'admin.activeAgents': 'Active Agents',
+    'admin.recentInquiries': 'Recent Inquiries',
+    'admin.viewAll': 'View All',
+    'admin.propertyPerformance': 'Property Performance',
+    'admin.salesVsTarget': 'Sales vs Target',
+    'admin.monthlyGrowth': 'Monthly Growth',
+    'admin.growthDesc': 'Up by 15% from last month',
   },
   ar: {
+    'nav.home': 'الرئيسية',
     // Navigation
     'nav.properties': 'العقارات',
     'nav.locations': 'المواقع',
@@ -121,10 +147,15 @@ const translations: Record<Locale, Record<string, string>> = {
     'hero.title': 'اكتشف منزل أحلامك الفاخر',
     'hero.subtitle': 'خدمات عقارية عالمية المستوى للعملاء الأكثر تمييزاً',
     'hero.cta': 'دعنا نتحدث',
+    'hero.titleLine1': 'اكتشف',
+    'hero.titleLine2': 'منزل أحلامك الفاخر',
+    'home.scroll': 'مرر للأسفل',
     
     // Featured Properties
+    'featured.selection': 'اختياراتنا',
     'properties.title': 'العقارات المختارة',
     'properties.subtitle': 'عقارات فاخرة مختارة بعناية في أفضل مواقع قطر',
+    'featured.viewAll': 'عرض الكل',
     'properties.forSale': 'للبيع',
     'properties.forRent': 'للإيجار',
     'properties.beds': 'غرف نوم',
@@ -135,6 +166,7 @@ const translations: Record<Locale, Record<string, string>> = {
     // Locations
     'locations.title': 'استكشف المواقع المميزة',
     'locations.subtitle': 'اكتشف أحياء قطر الأكثر حصرية',
+    'locations.empty': 'لم يتم العثور على عقارات لهذا الفلتر.',
     
     // Services
     'services.title': 'خدماتنا',
@@ -147,6 +179,7 @@ const translations: Record<Locale, Record<string, string>> = {
     
     // Why Us
     'whyus.title': 'رفع معايير التميز العقاري في قطر',
+    'whyus.heading': 'رفع معايير التميز العقاري في قطر',
     'whyus.desc': 'بيرل إيليت برويرتيز ليست مجرد وكالة عقارية. نحن شركاؤك المخصصون في التنقل عبر سوق العقارات القطري المتطور، مقدمين خدمة شخصية تتجاوز التوقعات في كل خطوة.',
     'whyus.learnmore': 'اعرف المزيد عنا',
     'whyus.feature1': 'الأمان المميز',
@@ -168,6 +201,9 @@ const translations: Record<Locale, Record<string, string>> = {
     'contact.sendmessage': 'إرسال رسالة',
     'contact.support': 'دعم 24/7',
     'contact.supportdesc': 'فريقنا متاح على مدار الساعة للإجابة على أسئلتك',
+    'contact.callus': 'اتصل بنا',
+    'contact.emailus': 'راسلنا',
+    'contact.visitus': 'زرنا',
     'contact.form.name': 'الاسم الكامل',
     'contact.form.email': 'عنوان بريد إلكتروني',
     'contact.form.phone': 'رقم الهاتف',
@@ -201,13 +237,32 @@ const translations: Record<Locale, Record<string, string>> = {
     'about.readydesc': 'دع فريقنا المتخصص يرشدك عبر أكثر فرص العقارات حصرية في قطر',
     'about.browseprops': 'تصفح العقارات',
     'about.contactus': 'اتصل بنا',
+
+    // Admin
+    'admin.overview': 'نظرة عامة',
+    'admin.dashboard': 'لوحة التحكم',
+    'admin.totalProperties': 'إجمالي العقارات',
+    'admin.activeInquiries': 'الاستفسارات النشطة',
+    'admin.websiteViews': 'مشاهدات الموقع',
+    'admin.activeAgents': 'الوكلاء النشطون',
+    'admin.recentInquiries': 'آخر الاستفسارات',
+    'admin.viewAll': 'عرض الكل',
+    'admin.propertyPerformance': 'أداء العقارات',
+    'admin.salesVsTarget': 'المبيعات مقابل الهدف',
+    'admin.monthlyGrowth': 'النمو الشهري',
+    'admin.growthDesc': 'ارتفع بنسبة 15% عن الشهر الماضي',
   }
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [locale, setLocale] = useState<Locale>('en')
+  const [locale, setLocale] = useState<Locale>(() => {
+    if (typeof window === 'undefined') return 'en'
+
+    const savedLocale = window.localStorage.getItem('locale')
+    return savedLocale === 'ar' ? 'ar' : 'en'
+  })
 
   const t = (key: string) => {
     return translations[locale][key] || key
@@ -218,6 +273,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     document.documentElement.dir = dir
     document.documentElement.lang = locale
+    window.localStorage.setItem('locale', locale)
   }, [locale, dir])
 
   return (

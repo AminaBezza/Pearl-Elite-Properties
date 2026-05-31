@@ -1,46 +1,27 @@
-import React from 'react'
+"use client"
 
-const services = [
-  { 
-    id: '01', 
-    title: 'Property Sales', 
-    desc: 'Expert guidance for buying premium residential and commercial assets.' 
-  },
-  { 
-    id: '02', 
-    title: 'Luxury Rentals', 
-    desc: 'Exclusive leasing opportunities in Qatar most prestigious towers.' 
-  },
-  { 
-    id: '03', 
-    title: 'Property Management', 
-    desc: 'Complete hassle-free management for property owners.' 
-  },
-  { 
-    id: '04', 
-    title: 'Investment Advisory', 
-    desc: 'Strategic advice for high-yield real estate investments in Doha.' 
-  },
-  { 
-    id: '05', 
-    title: 'Valuations', 
-    desc: 'Accurate market valuations based on real-time data and trends.' 
-  },
-  { 
-    id: '06', 
-    title: 'Relocation Services', 
-    desc: 'Smooth transition services for international clients moving to Qatar.' 
-  },
-]
+import React from 'react'
+import { useLanguage } from '@/context/LanguageContext'
 
 const ServicesSection = () => {
+  const { t } = useLanguage()
+
+  const services = [
+    { id: '01', title: t('services.service1'), desc: 'Expert guidance for buying premium residential and commercial assets.' },
+    { id: '02', title: t('services.service2'), desc: 'Exclusive leasing opportunities in Qatar most prestigious towers.' },
+    { id: '03', title: t('services.service3'), desc: 'Complete hassle-free management for property owners.' },
+    { id: '04', title: t('services.service4'), desc: 'Strategic advice for high-yield real estate investments in Doha.' },
+    { id: '05', title: t('services.service5'), desc: 'Accurate market valuations based on real-time data and trends.' },
+    { id: '06', title: t('services.service6'), desc: 'Smooth transition services for international clients moving to Qatar.' },
+  ]
+
   return (
     <section className="section-padding bg-white">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 space-y-4 md:space-y-0">
           <div className="space-y-4">
-            <h3 className="text-gold text-sm tracking-[0.2em] uppercase">What we do</h3>
-            <h2 className="text-3xl lg:text-5xl">Our Premium Services</h2>
+            <h3 className="text-gold text-sm tracking-[0.2em] uppercase">{t('services.title')}</h3>
+            <h2 className="text-3xl lg:text-5xl">{t('services.title')}</h2>
           </div>
         </div>
 
