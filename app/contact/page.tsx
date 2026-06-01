@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { MapPin, Phone, Mail } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { toast } from 'react-hot-toast'
 
 const ContactPage = () => {
   const { t } = useLanguage()
@@ -12,17 +13,122 @@ const ContactPage = () => {
     phone: '',
     message: ''
   })
+  const [recaptchaSiteKey, setRecaptchaSiteKey] = useState<string | null>(null)
+
+  // Load reCAPTCHA v3 script (transparent) once
+  useEffect(() => {
+    let mounted = true
+
+    const init = async () => {
+      try {
+        const res = await fetch('/api/config/recaptcha')
+        const json = await res.json()
+        const siteKey = json?.siteKey
+        if (!mounted) return
+        setRecaptchaSiteKey(siteKey || null)
+        if (!siteKey) {
+          console.warn('NEXT_PUBLIC_RECAPTCHA_SITE_KEY not set (server)')
+          return
+        }
+
+        if ((window as any).grecaptcha) return
+
+        const script = document.createElement('script')
+        script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
+        script.async = true
+        script.defer = true
+        document.head.appendChild(script)
+      } catch (e) {
+        console.error('Failed to load recaptcha config', e)
+      }
+    }
+
+    void init()
+    return () => {
+      mounted = false
+    }
+  }, [])
 
   const handleChange = (e: any) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Add your form submission logic here
-    setFormData({ name: '', email: '', phone: '', message: '' })
+
+    // Execute reCAPTCHA v3 to get token (transparent to user)
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+    let recaptchaToken: string | null = null
+    if (!siteKey) {
+      toast.error('reCAPTCHA site key not configured')
+      console.error('NEXT_PUBLIC_RECAPTCHA_SITE_KEY missing')
+      return
+    }
+
+    // Wait for grecaptcha to be available (up to 2s)
+    const waitForGrecaptcha = async (timeout = 2000) => {
+      const start = Date.now()
+      while (Date.now() - start < timeout) {
+        const g = (window as any).grecaptcha
+        if (g && typeof g.execute === 'function') return g
+        // small delay
+        // eslint-disable-next-line no-await-in-loop
+        await new Promise(r => setTimeout(r, 100))
+      }
+      return null
+    }
+
+    const grecaptcha = await waitForGrecaptcha(2000)
+    if (!grecaptcha) {
+      toast.error('reCAPTCHA non disponible, réessayez plus tard')
+      console.error('grecaptcha not ready after wait')
+      return
+    }
+
+    try {
+      recaptchaToken = await grecaptcha.execute(siteKey, { action: 'contact_form' })
+      console.log('recaptcha token received', recaptchaToken)
+    } catch (e) {
+      console.error('grecaptcha execute error', e)
+    }
+
+    if (!recaptchaToken) {
+      toast.error('Vérification reCAPTCHA échouée, réessayez')
+      return
+    }
+
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      recaptchaToken
+    }
+
+    try {
+      const res = await fetch('/api/contact/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+
+      const data = await res.json()
+      if (!res.ok) {
+        console.error('Email send error', data)
+        const msg = data?.error || data?.details || 'Failed to send message'
+        toast.error(msg)
+        return
+      }
+
+      toast.success('Message sent to team')
+      setFormData({ name: '', email: '', phone: '', message: '' })
+      // v3 doesn't require reset
+      void 0
+    } catch (err) {
+      console.error(err)
+      toast.error('Failed to send message')
+    }
   }
 
   return (
@@ -55,8 +161,8 @@ const ContactPage = () => {
                 <Phone className="text-gold" size={40} />
               </div>
               <h3 className="text-xl font-heading text-luxury-black">{t('contact.callus')}</h3>
-              <a href="https://wa.me/97444440000" className="text-sm text-blue-500 hover:underline font-medium">
-                +974 4444 0000
+              <a href="https://wa.me/213676346072" className="text-sm text-blue-500 hover:underline font-medium">
+                +213 676 346 072
               </a>
               <p className="text-xs text-gray-500">(Available on WhatsApp)</p>
             </div>
@@ -67,8 +173,8 @@ const ContactPage = () => {
                 <Mail className="text-gold" size={40} />
               </div>
               <h3 className="text-xl font-heading text-luxury-black">{t('contact.emailus')}</h3>
-              <a href="mailto:info@pearlelite.qa" className="text-sm text-blue-500 hover:underline font-medium">
-                info@pearlelite.qa
+              <a href="mailto:bezzaamina31@gmail.com" className="text-sm text-blue-500 hover:underline font-medium">
+                bezzaamina31@gmail.com
               </a>
               <p className="text-xs text-gray-500">(Response within 24 hours)</p>
             </div>
@@ -101,6 +207,11 @@ const ContactPage = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                {!recaptchaSiteKey && (
+                  <div className="p-4 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800">
+                    <strong>reCAPTCHA non configuré.</strong> Ajoute `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` et `RECAPTCHA_SECRET_KEY` dans .env.local et redémarre le serveur.
+                  </div>
+                )}
                 {/* Name */}
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{t('contact.form.name')}</label>

@@ -99,6 +99,34 @@ const translations: Record<Locale, Record<string, string>> = {
     'contact.hours2time': '10:00 AM - 4:00 PM',
     'contact.hours3': 'Friday',
     'contact.hours3time': 'Closed',
+
+    // Search / Filters
+    'search.placeholder': 'Search properties...',
+    'search.button': 'Search',
+    'search.location': 'Location',
+    'search.propertyType': 'Property Type',
+    'search.priceRange': 'Price Range',
+    'search.bedrooms': 'Bedrooms',
+    'search.any': 'Any',
+    'search.anyPrice': 'Any Price',
+    'search.allTypes': 'All Types',
+    'search.allLocations': 'All Locations',
+    'search.loc.pearl': 'The Pearl',
+    'search.loc.lusail': 'Lusail',
+    'search.loc.westbay': 'West Bay',
+    'search.loc.msheireb': 'Msheireb',
+    'search.type.apartment': 'Apartment',
+    'search.type.villa': 'Villa',
+    'search.type.penthouse': 'Penthouse',
+    'search.type.commercial': 'Commercial',
+    'search.price.q1': 'QAR 1M - 5M',
+    'search.price.q2': 'QAR 5M - 10M',
+    'search.price.q3': 'QAR 10M+',
+    'search.bed.1': '1+ Beds',
+    'search.bed.2': '2+ Beds',
+    'search.bed.3': '3+ Beds',
+    'search.bed.4': '4+ Beds',
+    'search.bed.5': '5+ Beds',
     
     // About
     'about.story': 'Our Story',
@@ -131,6 +159,10 @@ const translations: Record<Locale, Record<string, string>> = {
     'admin.salesVsTarget': 'Sales vs Target',
     'admin.monthlyGrowth': 'Monthly Growth',
     'admin.growthDesc': 'Up by 15% from last month',
+    // Brand
+    'brand.pearl': 'Pearl',
+    'brand.elite': 'Elite',
+    'brand.properties': 'Properties',
   },
   ar: {
     'nav.home': 'الرئيسية',
@@ -219,6 +251,34 @@ const translations: Record<Locale, Record<string, string>> = {
     'contact.hours2time': '10:00 صباحاً - 4:00 مساءً',
     'contact.hours3': 'الجمعة',
     'contact.hours3time': 'مغلق',
+
+    // Search / Filters
+    'search.placeholder': '...ابحث عن العقارات',
+    'search.button': 'ابحث',
+    'search.location': 'الموقع',
+    'search.propertyType': 'نوع العقار',
+    'search.priceRange': 'نطاق السعر',
+    'search.bedrooms': 'غرف النوم',
+    'search.any': 'أي',
+    'search.anyPrice': 'أي سعر',
+    'search.allTypes': 'جميع الأنواع',
+    'search.allLocations': 'جميع المواقع',
+    'search.loc.pearl': 'اللؤلؤة',
+    'search.loc.lusail': 'لوسيل',
+    'search.loc.westbay': 'ويست باي',
+    'search.loc.msheireb': 'المشيرب',
+    'search.type.apartment': 'شقة',
+    'search.type.villa': 'فيلا',
+    'search.type.penthouse': 'بنتهاوس',
+    'search.type.commercial': 'تجاري',
+    'search.price.q1': '1M - 5M ريال',
+    'search.price.q2': '5M - 10M ريال',
+    'search.price.q3': '10M+ ريال',
+    'search.bed.1': '1+ غرف',
+    'search.bed.2': '2+ غرف',
+    'search.bed.3': '3+ غرف',
+    'search.bed.4': '4+ غرف',
+    'search.bed.5': '5+ غرف',
     
     // About
     'about.story': 'قصتنا',
@@ -251,6 +311,10 @@ const translations: Record<Locale, Record<string, string>> = {
     'admin.salesVsTarget': 'المبيعات مقابل الهدف',
     'admin.monthlyGrowth': 'النمو الشهري',
     'admin.growthDesc': 'ارتفع بنسبة 15% عن الشهر الماضي',
+    // Brand
+    'brand.pearl': 'بيرل',
+    'brand.elite': 'إيليت',
+    'brand.properties': 'العقارات',
   }
 }
 

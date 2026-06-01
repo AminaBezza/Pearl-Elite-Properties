@@ -28,7 +28,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider">{t('contact.callus')}</p>
-                  <p className="text-luxury-black font-medium">+974 4444 0000</p>
+                  <p className="text-luxury-black font-medium">+213 676 346 072</p>
                 </div>
               </div>
 
@@ -38,7 +38,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider">{t('contact.emailus')}</p>
-                  <p className="text-luxury-black font-medium">info@pearlelite.qa</p>
+                  <p className="text-luxury-black font-medium">bezzaamina31@gmail.com</p>
                 </div>
               </div>
 

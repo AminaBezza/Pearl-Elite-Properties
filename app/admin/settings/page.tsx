@@ -62,7 +62,7 @@ const SettingsPage = () => {
                         </div>
                         <div className="space-y-2">
                             <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Support Phone</label>
-                            <input type="text" defaultValue="+974 4444 0000" className="w-full border border-gray-100 p-3 text-sm focus:border-gold outline-none" />
+                          <input type="text" defaultValue="+213 676 346 072" className="w-full border border-gray-100 p-3 text-sm focus:border-gold outline-none" />
                         </div>
                     </div>
                 </div>

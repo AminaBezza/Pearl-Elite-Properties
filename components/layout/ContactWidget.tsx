@@ -11,7 +11,7 @@ const ContactWidget = () => {
     {
       label: 'WhatsApp',
       icon: MessageCircle,
-      href: 'https://wa.me/212676346072', // Assuming +212 based on the number format, feel free to adjust prefix
+      href: 'https://wa.me/213676346072',
       color: 'bg-luxury-black',
     },
     {
